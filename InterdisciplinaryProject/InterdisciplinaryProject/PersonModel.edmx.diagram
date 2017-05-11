@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e3ec790d4e3489a8b19f19181538195" Name="Diagram1">
+        <EntityTypeShape EntityType="PersonModel.activity" Width="1.5" PointX="8.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonModel.customer" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonModel.employee" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonModel.person" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonModel.reservation" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="PersonModel.FK__reservati__activ__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonModel.FK__customer__person__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonModel.FK__reservati__custo__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonModel.FK__employee__person__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonModel.FK__reservati__emplo__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonModel.specialization" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
