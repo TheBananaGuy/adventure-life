@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PersonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="wu17_Interdisciplinary_1semModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="activity">
           <Key>
             <PropertyRef Name="id" />
@@ -45,8 +45,8 @@
             <PropertyRef Name="activityID" />
           </Key>
           <Property Name="startTime" Type="datetime" Nullable="false" />
-          <Property Name="amount" Type="int" />
-          <Property Name="people" Type="int" />
+          <Property Name="amount" Type="tinyint" />
+          <Property Name="people" Type="tinyint" />
           <Property Name="customerID" Type="int" Nullable="false" />
           <Property Name="employeeID" Type="int" />
           <Property Name="activityID" Type="int" Nullable="false" />
@@ -59,7 +59,7 @@
           <Property Name="activityID" Type="int" Nullable="false" />
           <Property Name="employeeID" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__customer__person__4CA06362">
+        <Association Name="FK__customer__person__619B8048">
           <End Role="person" Type="Self.person" Multiplicity="1" />
           <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -71,7 +71,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__employee__person__5165187F">
+        <Association Name="FK__employee__person__66603565">
           <End Role="person" Type="Self.person" Multiplicity="1" />
           <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -83,7 +83,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__reservati__activ__5BE2A6F2">
+        <Association Name="FK__reservati__activ__70DDC3D8">
           <End Role="activity" Type="Self.activity" Multiplicity="1" />
           <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -95,7 +95,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__reservati__custo__59FA5E80">
+        <Association Name="FK__reservati__custo__6EF57B66">
           <End Role="customer" Type="Self.customer" Multiplicity="1" />
           <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -107,7 +107,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__reservati__emplo__5AEE82B9">
+        <Association Name="FK__reservati__emplo__6FE99F9F">
           <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
           <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -119,7 +119,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__specializ__activ__5629CD9C">
+        <Association Name="FK__specializ__activ__6B24EA82">
           <End Role="activity" Type="Self.activity" Multiplicity="1" />
           <End Role="specialization" Type="Self.specialization" Multiplicity="*" />
           <ReferentialConstraint>
@@ -131,7 +131,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__specializ__emplo__571DF1D5">
+        <Association Name="FK__specializ__emplo__6C190EBB">
           <End Role="employee" Type="Self.employee" Multiplicity="1" />
           <End Role="specialization" Type="Self.specialization" Multiplicity="*" />
           <ReferentialConstraint>
@@ -143,38 +143,38 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PersonModelStoreContainer">
+        <EntityContainer Name="wu17_Interdisciplinary_1semModelStoreContainer">
           <EntitySet Name="activity" EntityType="Self.activity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="reservation" EntityType="Self.reservation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="specialization" EntityType="Self.specialization" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__customer__person__4CA06362" Association="Self.FK__customer__person__4CA06362">
+          <AssociationSet Name="FK__customer__person__619B8048" Association="Self.FK__customer__person__619B8048">
             <End Role="person" EntitySet="person" />
             <End Role="customer" EntitySet="customer" />
           </AssociationSet>
-          <AssociationSet Name="FK__employee__person__5165187F" Association="Self.FK__employee__person__5165187F">
+          <AssociationSet Name="FK__employee__person__66603565" Association="Self.FK__employee__person__66603565">
             <End Role="person" EntitySet="person" />
             <End Role="employee" EntitySet="employee" />
           </AssociationSet>
-          <AssociationSet Name="FK__reservati__activ__5BE2A6F2" Association="Self.FK__reservati__activ__5BE2A6F2">
+          <AssociationSet Name="FK__reservati__activ__70DDC3D8" Association="Self.FK__reservati__activ__70DDC3D8">
             <End Role="activity" EntitySet="activity" />
             <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
-          <AssociationSet Name="FK__reservati__custo__59FA5E80" Association="Self.FK__reservati__custo__59FA5E80">
+          <AssociationSet Name="FK__reservati__custo__6EF57B66" Association="Self.FK__reservati__custo__6EF57B66">
             <End Role="customer" EntitySet="customer" />
             <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
-          <AssociationSet Name="FK__reservati__emplo__5AEE82B9" Association="Self.FK__reservati__emplo__5AEE82B9">
+          <AssociationSet Name="FK__reservati__emplo__6FE99F9F" Association="Self.FK__reservati__emplo__6FE99F9F">
             <End Role="employee" EntitySet="employee" />
             <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
-          <AssociationSet Name="FK__specializ__activ__5629CD9C" Association="Self.FK__specializ__activ__5629CD9C">
+          <AssociationSet Name="FK__specializ__activ__6B24EA82" Association="Self.FK__specializ__activ__6B24EA82">
             <End Role="activity" EntitySet="activity" />
             <End Role="specialization" EntitySet="specialization" />
           </AssociationSet>
-          <AssociationSet Name="FK__specializ__emplo__571DF1D5" Association="Self.FK__specializ__emplo__571DF1D5">
+          <AssociationSet Name="FK__specializ__emplo__6C190EBB" Association="Self.FK__specializ__emplo__6C190EBB">
             <End Role="employee" EntitySet="employee" />
             <End Role="specialization" EntitySet="specialization" />
           </AssociationSet>
@@ -183,7 +183,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="PersonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="wu17_Interdisciplinary_1semModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="activity">
           <Key>
             <PropertyRef Name="id" />
@@ -192,8 +192,8 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="timespan" Type="DateTime" Precision="3" />
           <Property Name="price" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__activ__5BE2A6F2" FromRole="activity" ToRole="reservation" />
-          <NavigationProperty Name="employees" Relationship="Self.specialization" FromRole="activity" ToRole="employee" />
+          <NavigationProperty Name="reservation" Relationship="Self.FK__reservati__activ__70DDC3D8" FromRole="activity" ToRole="reservation" />
+          <NavigationProperty Name="employee" Relationship="Self.specialization" FromRole="activity" ToRole="employee" />
         </EntityType>
         <EntityType Name="customer">
           <Key>
@@ -201,8 +201,8 @@
           </Key>
           <Property Name="personID" Type="Int32" Nullable="false" />
           <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="person" Relationship="Self.FK__customer__person__4CA06362" FromRole="customer" ToRole="person" />
-          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__custo__59FA5E80" FromRole="customer" ToRole="reservation" />
+          <NavigationProperty Name="person" Relationship="Self.FK__customer__person__619B8048" FromRole="customer" ToRole="person" />
+          <NavigationProperty Name="reservation" Relationship="Self.FK__reservati__custo__6EF57B66" FromRole="customer" ToRole="reservation" />
         </EntityType>
         <EntityType Name="employee">
           <Key>
@@ -210,9 +210,9 @@
           </Key>
           <Property Name="personID" Type="Int32" Nullable="false" />
           <Property Name="initial" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="person" Relationship="Self.FK__employee__person__5165187F" FromRole="employee" ToRole="person" />
-          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__emplo__5AEE82B9" FromRole="employee" ToRole="reservation" />
-          <NavigationProperty Name="activities" Relationship="Self.specialization" FromRole="employee" ToRole="activity" />
+          <NavigationProperty Name="person" Relationship="Self.FK__employee__person__66603565" FromRole="employee" ToRole="person" />
+          <NavigationProperty Name="reservation" Relationship="Self.FK__reservati__emplo__6FE99F9F" FromRole="employee" ToRole="reservation" />
+          <NavigationProperty Name="activity" Relationship="Self.specialization" FromRole="employee" ToRole="activity" />
         </EntityType>
         <EntityType Name="person">
           <Key>
@@ -223,8 +223,8 @@
           <Property Name="lastName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="Int32" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="customer" Relationship="Self.FK__customer__person__4CA06362" FromRole="person" ToRole="customer" />
-          <NavigationProperty Name="employee" Relationship="Self.FK__employee__person__5165187F" FromRole="person" ToRole="employee" />
+          <NavigationProperty Name="customer" Relationship="Self.FK__customer__person__619B8048" FromRole="person" ToRole="customer" />
+          <NavigationProperty Name="employee" Relationship="Self.FK__employee__person__66603565" FromRole="person" ToRole="employee" />
         </EntityType>
         <EntityType Name="reservation">
           <Key>
@@ -233,16 +233,16 @@
             <PropertyRef Name="activityID" />
           </Key>
           <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="amount" Type="Int32" />
-          <Property Name="people" Type="Int32" />
+          <Property Name="amount" Type="Byte" />
+          <Property Name="people" Type="Byte" />
           <Property Name="customerID" Type="Int32" Nullable="false" />
           <Property Name="employeeID" Type="Int32" />
           <Property Name="activityID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="activity" Relationship="Self.FK__reservati__activ__5BE2A6F2" FromRole="reservation" ToRole="activity" />
-          <NavigationProperty Name="customer" Relationship="Self.FK__reservati__custo__59FA5E80" FromRole="reservation" ToRole="customer" />
-          <NavigationProperty Name="employee" Relationship="Self.FK__reservati__emplo__5AEE82B9" FromRole="reservation" ToRole="employee" />
+          <NavigationProperty Name="activity" Relationship="Self.FK__reservati__activ__70DDC3D8" FromRole="reservation" ToRole="activity" />
+          <NavigationProperty Name="customer" Relationship="Self.FK__reservati__custo__6EF57B66" FromRole="reservation" ToRole="customer" />
+          <NavigationProperty Name="employee" Relationship="Self.FK__reservati__emplo__6FE99F9F" FromRole="reservation" ToRole="employee" />
         </EntityType>
-        <Association Name="FK__reservati__activ__5BE2A6F2">
+        <Association Name="FK__reservati__activ__70DDC3D8">
           <End Role="activity" Type="Self.activity" Multiplicity="1" />
           <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -254,7 +254,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__customer__person__4CA06362">
+        <Association Name="FK__customer__person__619B8048">
           <End Role="person" Type="Self.person" Multiplicity="1" />
           <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -266,7 +266,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__reservati__custo__59FA5E80">
+        <Association Name="FK__reservati__custo__6EF57B66">
           <End Role="customer" Type="Self.customer" Multiplicity="1" />
           <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -278,7 +278,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__employee__person__5165187F">
+        <Association Name="FK__employee__person__66603565">
           <End Role="person" Type="Self.person" Multiplicity="1" />
           <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -290,7 +290,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__reservati__emplo__5AEE82B9">
+        <Association Name="FK__reservati__emplo__6FE99F9F">
           <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
           <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -306,35 +306,35 @@
           <End Role="activity" Type="Self.activity" Multiplicity="*" />
           <End Role="employee" Type="Self.employee" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="PersonDBContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="activities" EntityType="Self.activity" />
-          <EntitySet Name="customers" EntityType="Self.customer" />
-          <EntitySet Name="employees" EntityType="Self.employee" />
-          <EntitySet Name="people" EntityType="Self.person" />
-          <EntitySet Name="reservations" EntityType="Self.reservation" />
-          <AssociationSet Name="FK__reservati__activ__5BE2A6F2" Association="Self.FK__reservati__activ__5BE2A6F2">
-            <End Role="activity" EntitySet="activities" />
-            <End Role="reservation" EntitySet="reservations" />
+        <EntityContainer Name="DBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="activity" EntityType="Self.activity" />
+          <EntitySet Name="customer" EntityType="Self.customer" />
+          <EntitySet Name="employee" EntityType="Self.employee" />
+          <EntitySet Name="person" EntityType="Self.person" />
+          <EntitySet Name="reservation" EntityType="Self.reservation" />
+          <AssociationSet Name="FK__reservati__activ__70DDC3D8" Association="Self.FK__reservati__activ__70DDC3D8">
+            <End Role="activity" EntitySet="activity" />
+            <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
-          <AssociationSet Name="FK__customer__person__4CA06362" Association="Self.FK__customer__person__4CA06362">
-            <End Role="person" EntitySet="people" />
-            <End Role="customer" EntitySet="customers" />
+          <AssociationSet Name="FK__customer__person__619B8048" Association="Self.FK__customer__person__619B8048">
+            <End Role="person" EntitySet="person" />
+            <End Role="customer" EntitySet="customer" />
           </AssociationSet>
-          <AssociationSet Name="FK__reservati__custo__59FA5E80" Association="Self.FK__reservati__custo__59FA5E80">
-            <End Role="customer" EntitySet="customers" />
-            <End Role="reservation" EntitySet="reservations" />
+          <AssociationSet Name="FK__reservati__custo__6EF57B66" Association="Self.FK__reservati__custo__6EF57B66">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
-          <AssociationSet Name="FK__employee__person__5165187F" Association="Self.FK__employee__person__5165187F">
-            <End Role="person" EntitySet="people" />
-            <End Role="employee" EntitySet="employees" />
+          <AssociationSet Name="FK__employee__person__66603565" Association="Self.FK__employee__person__66603565">
+            <End Role="person" EntitySet="person" />
+            <End Role="employee" EntitySet="employee" />
           </AssociationSet>
-          <AssociationSet Name="FK__reservati__emplo__5AEE82B9" Association="Self.FK__reservati__emplo__5AEE82B9">
-            <End Role="employee" EntitySet="employees" />
-            <End Role="reservation" EntitySet="reservations" />
+          <AssociationSet Name="FK__reservati__emplo__6FE99F9F" Association="Self.FK__reservati__emplo__6FE99F9F">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
           <AssociationSet Name="specialization" Association="Self.specialization">
-            <End Role="activity" EntitySet="activities" />
-            <End Role="employee" EntitySet="employees" />
+            <End Role="activity" EntitySet="activity" />
+            <End Role="employee" EntitySet="employee" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -342,9 +342,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PersonModelStoreContainer" CdmEntityContainer="PersonDBContext">
-          <EntitySetMapping Name="activities">
-            <EntityTypeMapping TypeName="PersonModel.activity">
+        <EntityContainerMapping StorageEntityContainer="wu17_Interdisciplinary_1semModelStoreContainer" CdmEntityContainer="DBContext">
+          <EntitySetMapping Name="activity">
+            <EntityTypeMapping TypeName="wu17_Interdisciplinary_1semModel.activity">
               <MappingFragment StoreEntitySet="activity">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -353,24 +353,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="customers">
-            <EntityTypeMapping TypeName="PersonModel.customer">
+          <EntitySetMapping Name="customer">
+            <EntityTypeMapping TypeName="wu17_Interdisciplinary_1semModel.customer">
               <MappingFragment StoreEntitySet="customer">
                 <ScalarProperty Name="personID" ColumnName="personID" />
                 <ScalarProperty Name="address" ColumnName="address" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="employees">
-            <EntityTypeMapping TypeName="PersonModel.employee">
+          <EntitySetMapping Name="employee">
+            <EntityTypeMapping TypeName="wu17_Interdisciplinary_1semModel.employee">
               <MappingFragment StoreEntitySet="employee">
                 <ScalarProperty Name="personID" ColumnName="personID" />
                 <ScalarProperty Name="initial" ColumnName="initial" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="people">
-            <EntityTypeMapping TypeName="PersonModel.person">
+          <EntitySetMapping Name="person">
+            <EntityTypeMapping TypeName="wu17_Interdisciplinary_1semModel.person">
               <MappingFragment StoreEntitySet="person">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
@@ -380,8 +380,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="reservations">
-            <EntityTypeMapping TypeName="PersonModel.reservation">
+          <EntitySetMapping Name="reservation">
+            <EntityTypeMapping TypeName="wu17_Interdisciplinary_1semModel.reservation">
               <MappingFragment StoreEntitySet="reservation">
                 <ScalarProperty Name="startTime" ColumnName="startTime" />
                 <ScalarProperty Name="amount" ColumnName="amount" />
@@ -392,7 +392,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="specialization" TypeName="PersonModel.specialization" StoreEntitySet="specialization">
+          <AssociationSetMapping Name="specialization" TypeName="wu17_Interdisciplinary_1semModel.specialization" StoreEntitySet="specialization">
             <EndProperty Name="activity">
               <ScalarProperty Name="id" ColumnName="activityID" />
             </EndProperty>
@@ -414,7 +414,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -15,8 +15,8 @@ namespace InterdisciplinaryProject
     public partial class reservation
     {
         public System.DateTime startTime { get; set; }
-        public Nullable<int> amount { get; set; }
-        public Nullable<int> people { get; set; }
+        public Nullable<byte> amount { get; set; }
+        public Nullable<byte> people { get; set; }
         public int customerID { get; set; }
         public Nullable<int> employeeID { get; set; }
         public int activityID { get; set; }

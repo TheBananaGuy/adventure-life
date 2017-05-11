@@ -17,7 +17,7 @@ namespace InterdisciplinaryProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public customer()
         {
-            this.reservations = new HashSet<reservation>();
+            this.reservation = new HashSet<reservation>();
         }
     
         public int personID { get; set; }
@@ -25,6 +25,6 @@ namespace InterdisciplinaryProject
     
         public virtual person person { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reservation> reservations { get; set; }
+        public virtual ICollection<reservation> reservation { get; set; }
     }
 }

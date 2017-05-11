@@ -48,8 +48,8 @@ primary key (activityID, employeeID)
 
 create table reservation (
 startTime datetime,
-amount int,
-people int,
+amount tinyint,
+people tinyint,
 customerID int foreign key references customer(personID),
 employeeID int foreign key references employee(personID),
 activityID int foreign key references activity(id),

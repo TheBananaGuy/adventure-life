@@ -13,10 +13,10 @@ namespace InterdisciplinaryProject
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PersonDBContext : DbContext
+    public partial class DBContext : DbContext
     {
-        public PersonDBContext()
-            : base("name=PersonDBContext")
+        public DBContext()
+            : base("name=DBContext")
         {
         }
     
@@ -25,10 +25,10 @@ namespace InterdisciplinaryProject
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<activity> activities { get; set; }
-        public virtual DbSet<customer> customers { get; set; }
-        public virtual DbSet<employee> employees { get; set; }
-        public virtual DbSet<person> people { get; set; }
-        public virtual DbSet<reservation> reservations { get; set; }
+        public virtual DbSet<activity> activity { get; set; }
+        public virtual DbSet<customer> customer { get; set; }
+        public virtual DbSet<employee> employee { get; set; }
+        public virtual DbSet<person> person { get; set; }
+        public virtual DbSet<reservation> reservation { get; set; }
     }
 }
