@@ -1,0 +1,45 @@
+.invisible {
+	display: none;
+}
+
+.visible {
+	display: inherit;
+}
+
+.centralize {
+	text-align: center;
+	margin: auto;
+}
+
+.fat {
+	padding-top: $spacing*2;
+	padding-bottom: $spacing*2;
+}
+
+.radial {
+	@include border-radius(100%);
+}
+
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.inline {
+	display: inline;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
