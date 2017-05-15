@@ -155,6 +155,34 @@
     <Content Include="AdventureLifeModel.edmx.diagram">
       <DependentUpon>AdventureLifeModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservations\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservations\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservations\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservations\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservations\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Employees\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Employees\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Employees\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Employees\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Employees\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Activities\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Activities\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Activities\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Activities\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Activities\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Timeslots\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Timeslots\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Timeslots\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Timeslots\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Timeslots\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -197,6 +225,11 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ActivitiesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmployeesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReservationsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TimeslotsController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="database_firewall_rules.cs">
       <DependentUpon>AdventureLifeModel.tt</DependentUpon>
@@ -210,7 +243,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="reservation.cs">
       <DependentUpon>AdventureLifeModel.tt</DependentUpon>
@@ -233,9 +265,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
