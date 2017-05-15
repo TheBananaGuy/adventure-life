@@ -8,12 +8,16 @@ create procedure activitiesByMonth
 @month int
 as
 begin
-	select a.name 'Activity name', sum(people) 'People traffic', sum r.id 'Amount of bookings'
+	select a.name 'Activity name', sum(people) 'People traffic', count(r.id) 'Amount of bookings'
 	from reservation r
 	join activity a on r.activityID = a.id
 	where year(r.eventDate) = @year
 	and month(r.eventDate) = @month
-	group by -- finish plz
+	group by a.name
 end
+
+go
+
+exec activitiesByMonth 2017, 05
 
 go
