@@ -21,7 +21,7 @@ JS 			= 'js/'
 
 // BUILD VARIABLES
 
-var ugly 		= false;
+var ugly 		= true;
 
 // TASKS
 
