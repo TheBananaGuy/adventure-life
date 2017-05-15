@@ -53,6 +53,32 @@
           <Property Name="activityID" Type="int" />
           <Property Name="employeeID" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'AdventureLife.dbo.unassignedBookings' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="unassignedBookings">
+          <Property Name="Activity" Type="varchar" MaxLength="50" />
+          <Property Name="Event date" Type="date" />
+          <Property Name="Starting at" Type="varchar" MaxLength="5" />
+          <Property Name="People amount" Type="tinyint" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AdventureLife.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
         <Association Name="FK__qualifica__activ__5441852A">
           <End Role="activity" Type="Self.activity" Multiplicity="1" />
           <End Role="qualification" Type="Self.qualification" Multiplicity="*" />
@@ -113,12 +139,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="activitiesByMonth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="month" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="AdventureLifeContextStoreContainer">
           <EntitySet Name="activity" EntityType="Self.activity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="eventTime" EntityType="Self.eventTime" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="qualification" EntityType="Self.qualification" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="reservation" EntityType="Self.reservation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__qualifica__activ__5441852A" Association="Self.FK__qualifica__activ__5441852A">
             <End Role="activity" EntitySet="activity" />
             <End Role="qualification" EntitySet="qualification" />
@@ -193,6 +233,22 @@
           <NavigationProperty Name="employee" Relationship="Self.FK__reservati__emplo__5165187F" FromRole="reservation" ToRole="employee" />
           <NavigationProperty Name="eventTime" Relationship="Self.FK__reservati__event__4F7CD00D" FromRole="reservation" ToRole="eventTime" />
         </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         <Association Name="FK__reservati__activ__5070F446">
           <End Role="activity" Type="Self.activity" Multiplicity="0..1" />
           <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
@@ -238,6 +294,7 @@
           <EntitySet Name="employees" EntityType="Self.employee" />
           <EntitySet Name="eventTimes" EntityType="Self.eventTime" />
           <EntitySet Name="reservations" EntityType="Self.reservation" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
           <AssociationSet Name="FK__reservati__activ__5070F446" Association="Self.FK__reservati__activ__5070F446">
             <End Role="activity" EntitySet="activities" />
             <End Role="reservation" EntitySet="reservations" />
@@ -254,7 +311,16 @@
             <End Role="activity" EntitySet="activities" />
             <End Role="employee" EntitySet="employees" />
           </AssociationSet>
+          <FunctionImport Name="activitiesByMonth" ReturnType="Collection(AdventureLifeContext.activitiesByMonth_Result)">
+            <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="month" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="activitiesByMonth_Result">
+          <Property Type="String" Name="Activity_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="People_traffic" Nullable="true" />
+          <Property Type="Int32" Name="Amount_of_bookings" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -305,6 +371,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="AdventureLifeContext.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <AssociationSetMapping Name="qualification" TypeName="AdventureLifeContext.qualification" StoreEntitySet="qualification">
             <EndProperty Name="activity">
               <ScalarProperty Name="id" ColumnName="activityID" />
@@ -313,6 +391,15 @@
               <ScalarProperty Name="id" ColumnName="employeeID" />
             </EndProperty>
           </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="activitiesByMonth" FunctionName="AdventureLifeContext.Store.activitiesByMonth">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AdventureLifeContext.activitiesByMonth_Result">
+                <ScalarProperty Name="Activity_name" ColumnName="Activity name" />
+                <ScalarProperty Name="People_traffic" ColumnName="People traffic" />
+                <ScalarProperty Name="Amount_of_bookings" ColumnName="Amount of bookings" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

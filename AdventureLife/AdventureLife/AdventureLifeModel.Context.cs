@@ -12,6 +12,8 @@ namespace AdventureLife
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class AdventureLifeEntities : DbContext
     {
@@ -29,5 +31,19 @@ namespace AdventureLife
         public virtual DbSet<employee> employees { get; set; }
         public virtual DbSet<eventTime> eventTimes { get; set; }
         public virtual DbSet<reservation> reservations { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
+    
+        public virtual ObjectResult<activitiesByMonth_Result> activitiesByMonth(Nullable<int> year, Nullable<int> month)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<activitiesByMonth_Result>("activitiesByMonth", yearParameter, monthParameter);
+        }
     }
 }

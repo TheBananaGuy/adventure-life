@@ -12,20 +12,13 @@ namespace AdventureLife
     using System;
     using System.Collections.Generic;
     
-    public partial class reservation
+    public partial class database_firewall_rules
     {
         public int id { get; set; }
         public string name { get; set; }
-        public Nullable<int> phone { get; set; }
-        public string email { get; set; }
-        public Nullable<byte> people { get; set; }
-        public Nullable<System.DateTime> eventDate { get; set; }
-        public Nullable<int> eventTimeID { get; set; }
-        public Nullable<int> activityID { get; set; }
-        public Nullable<int> employeeID { get; set; }
-    
-        public virtual activity activity { get; set; }
-        public virtual employee employee { get; set; }
-        public virtual eventTime eventTime { get; set; }
+        public string start_ip_address { get; set; }
+        public string end_ip_address { get; set; }
+        public System.DateTime create_date { get; set; }
+        public System.DateTime modify_date { get; set; }
     }
 }

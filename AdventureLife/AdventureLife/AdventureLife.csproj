@@ -142,6 +142,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
     <EntityDeploy Include="AdventureLifeModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AdventureLifeModel.Designer.cs</LastGenOutput>
@@ -149,11 +155,6 @@
     <Content Include="AdventureLifeModel.edmx.diagram">
       <DependentUpon>AdventureLifeModel.edmx</DependentUpon>
     </Content>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -173,6 +174,9 @@
     <Content Include="Views\Booking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="activitiesByMonth_Result.cs">
+      <DependentUpon>AdventureLifeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="activity.cs">
       <DependentUpon>AdventureLifeModel.tt</DependentUpon>
     </Compile>
@@ -192,7 +196,11 @@
       <DependentUpon>AdventureLifeModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="database_firewall_rules.cs">
+      <DependentUpon>AdventureLifeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="employee.cs">
       <DependentUpon>AdventureLifeModel.tt</DependentUpon>
     </Compile>
@@ -202,6 +210,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="reservation.cs">
       <DependentUpon>AdventureLifeModel.tt</DependentUpon>
@@ -224,6 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
