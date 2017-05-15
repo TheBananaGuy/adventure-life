@@ -174,10 +174,6 @@
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Booking\Create.cshtml" />
-    <Content Include="Views\Booking\Delete.cshtml" />
-    <Content Include="Views\Booking\Details.cshtml" />
-    <Content Include="Views\Booking\Edit.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

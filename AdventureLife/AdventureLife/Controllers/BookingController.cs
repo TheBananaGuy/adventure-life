@@ -14,33 +14,10 @@ namespace AdventureLife.Controllers
     {
         private AdventureLifeEntities db = new AdventureLifeEntities();
 
-        // GET: Booking
+        // GET: Booking/Create
         public ActionResult Index()
         {
-            var reservations = db.reservations.Include(r => r.activity).Include(r => r.employee).Include(r => r.eventTime);
-            return View(reservations.ToList());
-        }
-
-        // GET: Booking/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            reservation reservation = db.reservations.Find(id);
-            if (reservation == null)
-            {
-                return HttpNotFound();
-            }
-            return View(reservation);
-        }
-
-        // GET: Booking/Create
-        public ActionResult Create()
-        {
             ViewBag.activityID = new SelectList(db.activities, "id", "name");
-            ViewBag.employeeID = new SelectList(db.employees, "id", "firstName");
             ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime");
             return View();
         }
@@ -50,7 +27,7 @@ namespace AdventureLife.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,phone,email,people,eventDate,eventTimeID,activityID,employeeID")] reservation reservation)
+        public ActionResult Index([Bind(Include = "id,name,phone,email,people,eventDate,eventTimeID,activityID")] reservation reservation)
         {
             if (ModelState.IsValid)
             {
@@ -60,72 +37,8 @@ namespace AdventureLife.Controllers
             }
 
             ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
-            ViewBag.employeeID = new SelectList(db.employees, "id", "firstName", reservation.employeeID);
             ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime", reservation.eventTimeID);
             return View(reservation);
-        }
-
-        // GET: Booking/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            reservation reservation = db.reservations.Find(id);
-            if (reservation == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
-            ViewBag.employeeID = new SelectList(db.employees, "id", "firstName", reservation.employeeID);
-            ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime", reservation.eventTimeID);
-            return View(reservation);
-        }
-
-        // POST: Booking/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,name,phone,email,people,eventDate,eventTimeID,activityID,employeeID")] reservation reservation)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(reservation).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
-            ViewBag.employeeID = new SelectList(db.employees, "id", "firstName", reservation.employeeID);
-            ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime", reservation.eventTimeID);
-            return View(reservation);
-        }
-
-        // GET: Booking/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            reservation reservation = db.reservations.Find(id);
-            if (reservation == null)
-            {
-                return HttpNotFound();
-            }
-            return View(reservation);
-        }
-
-        // POST: Booking/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            reservation reservation = db.reservations.Find(id);
-            db.reservations.Remove(reservation);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
