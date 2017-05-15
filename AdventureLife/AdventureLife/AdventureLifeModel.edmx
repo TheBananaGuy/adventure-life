@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AdventureLifeContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="price" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="initial" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="eventTime">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="startTime" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="qualification">
+          <Key>
+            <PropertyRef Name="activityID" />
+            <PropertyRef Name="employeeID" />
+          </Key>
+          <Property Name="activityID" Type="int" Nullable="false" />
+          <Property Name="employeeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="reservation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="phone" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="people" Type="tinyint" />
+          <Property Name="eventDate" Type="date" />
+          <Property Name="eventTimeID" Type="int" />
+          <Property Name="activityID" Type="int" />
+          <Property Name="employeeID" Type="int" />
+        </EntityType>
+        <Association Name="FK__qualifica__activ__5441852A">
+          <End Role="activity" Type="Self.activity" Multiplicity="1" />
+          <End Role="qualification" Type="Self.qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="activity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="qualification">
+              <PropertyRef Name="activityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__qualifica__emplo__5535A963">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="qualification" Type="Self.qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="qualification">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__activ__5070F446">
+          <End Role="activity" Type="Self.activity" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="activity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="activityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__emplo__5165187F">
+          <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__event__4F7CD00D">
+          <End Role="eventTime" Type="Self.eventTime" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eventTime">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="eventTimeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AdventureLifeContextStoreContainer">
+          <EntitySet Name="activity" EntityType="Self.activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="eventTime" EntityType="Self.eventTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="qualification" EntityType="Self.qualification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reservation" EntityType="Self.reservation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__qualifica__activ__5441852A" Association="Self.FK__qualifica__activ__5441852A">
+            <End Role="activity" EntitySet="activity" />
+            <End Role="qualification" EntitySet="qualification" />
+          </AssociationSet>
+          <AssociationSet Name="FK__qualifica__emplo__5535A963" Association="Self.FK__qualifica__emplo__5535A963">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="qualification" EntitySet="qualification" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__activ__5070F446" Association="Self.FK__reservati__activ__5070F446">
+            <End Role="activity" EntitySet="activity" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__emplo__5165187F" Association="Self.FK__reservati__emplo__5165187F">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__event__4F7CD00D" Association="Self.FK__reservati__event__4F7CD00D">
+            <End Role="eventTime" EntitySet="eventTime" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdventureLifeContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__activ__5070F446" FromRole="activity" ToRole="reservation" />
+          <NavigationProperty Name="employees" Relationship="Self.qualification" FromRole="activity" ToRole="employee" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="initial" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__emplo__5165187F" FromRole="employee" ToRole="reservation" />
+          <NavigationProperty Name="activities" Relationship="Self.qualification" FromRole="employee" ToRole="activity" />
+        </EntityType>
+        <EntityType Name="eventTime">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="startTime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__event__4F7CD00D" FromRole="eventTime" ToRole="reservation" />
+        </EntityType>
+        <EntityType Name="reservation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="people" Type="Byte" />
+          <Property Name="eventDate" Type="DateTime" Precision="0" />
+          <Property Name="eventTimeID" Type="Int32" />
+          <Property Name="activityID" Type="Int32" />
+          <Property Name="employeeID" Type="Int32" />
+          <NavigationProperty Name="activity" Relationship="Self.FK__reservati__activ__5070F446" FromRole="reservation" ToRole="activity" />
+          <NavigationProperty Name="employee" Relationship="Self.FK__reservati__emplo__5165187F" FromRole="reservation" ToRole="employee" />
+          <NavigationProperty Name="eventTime" Relationship="Self.FK__reservati__event__4F7CD00D" FromRole="reservation" ToRole="eventTime" />
+        </EntityType>
+        <Association Name="FK__reservati__activ__5070F446">
+          <End Role="activity" Type="Self.activity" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="activity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="activityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__emplo__5165187F">
+          <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__event__4F7CD00D">
+          <End Role="eventTime" Type="Self.eventTime" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eventTime">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="eventTimeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="qualification">
+          <End Role="activity" Type="Self.activity" Multiplicity="*" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="AdventureLifeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="activities" EntityType="Self.activity" />
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <EntitySet Name="eventTimes" EntityType="Self.eventTime" />
+          <EntitySet Name="reservations" EntityType="Self.reservation" />
+          <AssociationSet Name="FK__reservati__activ__5070F446" Association="Self.FK__reservati__activ__5070F446">
+            <End Role="activity" EntitySet="activities" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__emplo__5165187F" Association="Self.FK__reservati__emplo__5165187F">
+            <End Role="employee" EntitySet="employees" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__event__4F7CD00D" Association="Self.FK__reservati__event__4F7CD00D">
+            <End Role="eventTime" EntitySet="eventTimes" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="qualification" Association="Self.qualification">
+            <End Role="activity" EntitySet="activities" />
+            <End Role="employee" EntitySet="employees" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdventureLifeContextStoreContainer" CdmEntityContainer="AdventureLifeEntities">
+          <EntitySetMapping Name="activities">
+            <EntityTypeMapping TypeName="AdventureLifeContext.activity">
+              <MappingFragment StoreEntitySet="activity">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="AdventureLifeContext.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="initial" ColumnName="initial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="eventTimes">
+            <EntityTypeMapping TypeName="AdventureLifeContext.eventTime">
+              <MappingFragment StoreEntitySet="eventTime">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reservations">
+            <EntityTypeMapping TypeName="AdventureLifeContext.reservation">
+              <MappingFragment StoreEntitySet="reservation">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="people" ColumnName="people" />
+                <ScalarProperty Name="eventDate" ColumnName="eventDate" />
+                <ScalarProperty Name="eventTimeID" ColumnName="eventTimeID" />
+                <ScalarProperty Name="activityID" ColumnName="activityID" />
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="qualification" TypeName="AdventureLifeContext.qualification" StoreEntitySet="qualification">
+            <EndProperty Name="activity">
+              <ScalarProperty Name="id" ColumnName="activityID" />
+            </EndProperty>
+            <EndProperty Name="employee">
+              <ScalarProperty Name="id" ColumnName="employeeID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
