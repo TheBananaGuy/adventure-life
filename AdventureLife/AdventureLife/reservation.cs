@@ -11,17 +11,27 @@ namespace AdventureLife
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class reservation
     {
         public int id { get; set; }
+        [Display(Name = "Name")]
         public string name { get; set; }
+        [Display(Name = "Phone")]
         public Nullable<int> phone { get; set; }
+        [Display(Name = "E-mail")]
         public string email { get; set; }
+        [Display(Name = "Amount of participants")]
         public Nullable<byte> people { get; set; }
+        [Display(Name = "Day")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> eventDate { get; set; }
+        [Display(Name = "Time")]
         public Nullable<int> eventTimeID { get; set; }
+        [Display(Name = "Activity")]
         public Nullable<int> activityID { get; set; }
+        [Display(Name = "Assigned to")]
         public Nullable<int> employeeID { get; set; }
     
         public virtual activity activity { get; set; }
