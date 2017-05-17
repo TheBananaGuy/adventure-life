@@ -1,7 +1,41 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "Home";
 }
 
 <h2>Index</h2>
 
+<div class="banner">
+    <div class="inner-text">
+        <h1>Find a favourite activity already today!</h1>
+        <p>Best service, great fields, unrivalled fun</p>
+    </div>
+</div>
+<div class="grid">
+    <div class="item">
+        <img src="images/rockclimbing.png" alt="rockclimbing">
+        <div class="inner">
+            @Html.ActionLink("Rock Climbing", "Rockclimbing", "Activity", new { area = "" }, new { @class = "activity" })
+        </div>
+    </div>
+    <div class="item">
+        <img src="images/archery.png" alt="archery">
+        <div class="inner">
+            @Html.ActionLink("Bow Tag", "Bowtag", "Activity", new { area = "" }, new { @class = "activity" })
+        </div>
+    </div>
+    <div class="item">
+        <img src="images/paintball.png" alt="paintball">
+        <div class="inner">
+            @Html.ActionLink("Paintball", "Paintball", "Activity", new { area = "" }, new { @class = "activity" })
+        </div>
+    </div>
+</div>
+<div class="feature">
+    <h1>Have a go at being your own real life action hero</h1>
+    <p>Looking for something to do in Aarhus? Why not visit one of our Aarhus Adventure Life centres? Our fields are perfect for players that care about creating memorable experiences. Whether you are looking for a teambuilding event, special birthday party event or just an excuse to shoot your friends, Adventure Life is always here for you. Adventure Life is specialising in rock climbing, archery and paintball activities. Moreover, we can also help you to celebrate hen and stag parties, birthday parties and company day out events. We are giving always 100% to make you day here at the fields as memorable as possible.</p>
+    <p>Here at Adventure Life we are fully dedicated to providing you the highest standards of safety and best value for your money and most important - fun! Book online today and enjoy the ultimate paintballing, rockclimbing or bow tag experience. To make a booking, simply use our Booking form or call +(45) 123 456 789 and prepare yourself for the ultimate day out event. To get ready, make sure you read our Safety Information. If you have further questions, please contact with us or use the Contact enquiry form. Adventure Life strives to ensure a player’s day meets all their expectations so we work tirelessly behind the scenes so that when you visit Adventure Life Aarhus we can we deliver: impeccable safety, reliable equipment, good staff, safe playing zones and great game day scenarios as standard.</p>
+</div>
+
+<div class="google-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d71082.18750795966!2d10.182766538103502!3d56.16888934892741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sdk!4v1494784337778" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>

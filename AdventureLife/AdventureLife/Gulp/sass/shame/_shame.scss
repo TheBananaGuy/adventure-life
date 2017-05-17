@@ -621,9 +621,6 @@ textarea:focus:-moz-placeholder { color:transparent; }
 }
 
 /*column at activities*/
-.column {
-	column-count
-}
 
 .col-2-3 {
   width: 66.66%;
@@ -657,7 +654,7 @@ textarea:focus:-moz-placeholder { color:transparent; }
 
 @media screen and (max-width: 480px) {
 	.col-2-3, .col-1-3 {
-		width: 100%
+		width: 100%;
 		clear: left;
 	}
 }

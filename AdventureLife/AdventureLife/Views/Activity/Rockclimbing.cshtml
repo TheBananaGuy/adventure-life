@@ -3,8 +3,38 @@
     ViewBag.Title = "Rockclimbing";
 }
 
-<h2>Rockclimbing</h2>
 
-@Html.Partial("_ActivityDetails")
-
-@Html.ActionLink("Back", "Index", "Activity", new { area = "" }, new { @class = "activity" })
+	<!--banner image-->
+<div class="activity-banner">
+    <div class="inner">
+        <h1>Rockclimbing</h1>
+        <div class="stick-to-bottom">
+            <i class="fa fa-angle-double-down fa-3x" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+<!--breadcrumb-->
+<ul class="breadcrumb">
+    <li>
+        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "" })
+    </li>
+    <li>Rockclimbing</li>
+</ul>
+<!--Column content-->
+<div class="column">
+    <div class="col-2-3">
+        <h1>Get a taste of rock climbing!</h1>
+        <p>There’s still hope for outdoor adventurers here in Denmark! Whether it’s your first time climbing, or you’re an experienced climber, we can offer you a taste of the rock climbing opportunities here in Adventure Life. The outdoor climbing wall here in Adventure life is designed to give fun experience for climbers of all ages. This is interesting opportunity to experience what rock climbing really feels without going to the real cliffs abroad or bouldering indoors.</p>
+        <p>We aim to give you the necessary core skills and to provide an amazing climbing experience. Our cliff is open to anyone with an interest in rock climbing, from beginner to experienced. Our team of experts is always here for you and can tailor you the best cliff wall. Make you way up the edges, corners and cracks and experience the thrill of rock climbing in truly stunning surroundings.</p>
+        <p>
+            Our sessions are aimed at indoor climbers who are looking to make the next step to outdoor sports climbing. Our sessions are great way to sample rock climbing for the first time. Not only it is a great excuse to explore some nice surroundings and improve your climbing technique, it’s also an extremely social activity that gets group of friends together for a day in the sun. Take a look through the options at the right and book your next paintball experience!
+        </p>
+    </div>
+    <div class="col-1-3">
+        <h1>Prices</h1>
+        <table>
+            @Html.Partial("_ActivityDetails")
+        </table>
+            <hr>
+            <button class="button">Book now!</button>
+        </div>
