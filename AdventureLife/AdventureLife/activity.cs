@@ -11,7 +11,7 @@ namespace AdventureLife
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public partial class activity
     {
@@ -21,11 +21,10 @@ namespace AdventureLife
             this.reservations = new HashSet<reservation>();
             this.employees = new HashSet<employee>();
         }
-    
+
+        [HiddenInput(DisplayValue = false)]
         public int id { get; set; }
-        [Display(Name = "Activity name")]
         public string name { get; set; }
-        [Display(Name = "Price per participant")]
         public Nullable<decimal> price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -11,7 +11,7 @@ namespace AdventureLife
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public partial class eventTime
     {
@@ -20,9 +20,9 @@ namespace AdventureLife
         {
             this.reservations = new HashSet<reservation>();
         }
-    
+
+        [HiddenInput(DisplayValue = false)]
         public int id { get; set; }
-        [Display(Name = "Time")]
         public string startTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

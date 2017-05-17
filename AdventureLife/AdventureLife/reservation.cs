@@ -12,20 +12,26 @@ namespace AdventureLife
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public partial class reservation
     {
+
+        [HiddenInput(DisplayValue = false)]
         public int id { get; set; }
         [Display(Name = "Name")]
         public string name { get; set; }
+        [DataType(DataType.PhoneNumber)]
         [Display(Name = "Phone")]
         public Nullable<int> phone { get; set; }
+        [DataType(DataType.EmailAddress)]
         [Display(Name = "E-mail")]
         public string email { get; set; }
         [Display(Name = "Amount of participants")]
         public Nullable<byte> people { get; set; }
-        [Display(Name = "Day")]
         [DataType(DataType.Date)]
+        [Display(Name = "Day")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> eventDate { get; set; }
         [Display(Name = "Time")]
         public Nullable<int> eventTimeID { get; set; }
