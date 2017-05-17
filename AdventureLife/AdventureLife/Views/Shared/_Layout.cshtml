@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en-us">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -21,14 +21,13 @@
         </div>
         <nav id="main-nav">
             <ul>
-                @Html.ActionLink("Home", "Index", "Home")
-                @Html.ActionLink("Booking", "Index", "Booking")
-                @Html.ActionLink("Contact", "Index", "Contact")
-                @Html.ActionLink("FAQ", "Index", "Faq")
-                @Html.ActionLink("Safety", "Index", "Safety")
-                @Html.ActionLink("Rock Climbing", "Rockclimbing", "Activity", new { area = "" }, new { @class = "activity" })
-                @Html.ActionLink("Bow Tag", "Bowtag", "Activity", new { area = "" }, new { @class = "activity" })
-                @Html.ActionLink("Paintball", "Paintball", "Activity", new { area = "" }, new { @class = "activity" })
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Booking", "Index", "Booking")</li>
+                <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                <li>@Html.ActionLink("Safety", "Index", "Safety")</li>
+                <li>@Html.ActionLink("Rock Climbing", "Rockclimbing", "Activity", new { area = "" }, new { @class = "activity" })</li>
+                <li>@Html.ActionLink("Bow Tag", "Bowtag", "Activity", new { area = "" }, new { @class = "activity" })</li>
+                <li>@Html.ActionLink("Paintball", "Paintball", "Activity", new { area = "" }, new { @class = "activity" })</li>
             </ul>
         </nav>
     </div>
@@ -42,27 +41,26 @@
     <footer>
         <div class="item-2">
             <h2>Contact us!</h2>
-                <ul>
-                    <li>
-                        <span style="white-space: nowrap;">
-                            <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
-                            <p>+(45) 123 456 789</p>
-                        </span>
-                    </li>
-                    <li>
-                        <span style="white-space: nowrap;">
-                            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-                            <p>info@adventurelife.com</p>
-                        </span>
-                    </li>
-                    <li>
-                        <span style="white-space: nowrap;">
-                            <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                            <p>Check out our facebook!</p>
-                        </span>
-                    </li>
-                </ul>
-            </div>
+            <ul class="footer__list">
+                <li>
+                    <span style="white-space: nowrap;">
+                        <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                    </span>
+                    <p>+(45) 123 456 789</p>
+                </li>
+                <li>
+                    <span style="white-space: nowrap;">
+                        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                    </span>
+                    <p>info@adventurelife.com</p>
+                </li>
+                <li>
+                    <span style="white-space: nowrap;">
+                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                    </span>
+                    <p>Check out our facebook!</p>
+                </li>
+            </ul>
         </div>
         <p>	&copy; @DateTime.Now.Year . All rights reserved. Adventure. Life.</p>
     </footer>

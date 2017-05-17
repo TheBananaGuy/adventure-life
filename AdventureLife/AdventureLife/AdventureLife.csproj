@@ -248,7 +248,6 @@
     <Compile Include="Controllers\ActivityController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\FaqController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SafetyController.cs" />
     <Compile Include="employee.cs">
@@ -275,9 +274,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Safety\Index.cshtml" />
-    <Content Include="Views\Faq\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Activity\Index.cshtml" />
     <Content Include="Views\Activity\Bowtag.cshtml" />
     <Content Include="Views\Activity\Rockclimbing.cshtml" />
     <Content Include="Views\Activity\Paintball.cshtml" />

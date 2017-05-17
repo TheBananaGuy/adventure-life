@@ -10,12 +10,6 @@ namespace AdventureLife.Controllers
     {
         private AdventureLifeEntities db = new AdventureLifeEntities();
 
-        // GET: Activity
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         // GET: Activity = Bow tag
         public ActionResult Bowtag()
         {

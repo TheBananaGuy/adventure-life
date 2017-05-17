@@ -1,8 +1,14 @@
-﻿
-<tr>
-    <td>
-        <p>Price per person: @ViewBag.Details.price DKK</p>
-    </td>
-</tr>
-<br />
-<p>Qualified instructors: @ViewBag.Details.employees.Count</p>
+﻿<div class="col-1-3">
+    <h1>Prices</h1>
+    <table>
+        <tr>
+            <td>
+                <p>Price per person: @ViewBag.Details.price DKK</p>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <p>Qualified instructors: @ViewBag.Details.employees.Count</p>
+    <hr>
+    <button class="button">Book now!</button>
+</div>
