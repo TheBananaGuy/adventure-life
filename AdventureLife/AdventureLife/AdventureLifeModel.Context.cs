@@ -31,7 +31,6 @@ namespace AdventureLife
         public virtual DbSet<employee> employees { get; set; }
         public virtual DbSet<eventTime> eventTimes { get; set; }
         public virtual DbSet<reservation> reservations { get; set; }
-        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     
         public virtual ObjectResult<activitiesByMonth_Result> activitiesByMonth(Nullable<int> year, Nullable<int> month)
         {

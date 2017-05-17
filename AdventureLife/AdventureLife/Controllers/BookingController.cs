@@ -33,12 +33,14 @@ namespace AdventureLife.Controllers
             {
                 db.reservations.Add(reservation);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.Booking = reservation;
+                // then send email
+                return View("Confirm");
             }
 
-            ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
-            ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime", reservation.eventTimeID);
-            return View(reservation);
+            // ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
+            // ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime", reservation.eventTimeID);
+            return View();
         }
 
         protected override void Dispose(bool disposing)

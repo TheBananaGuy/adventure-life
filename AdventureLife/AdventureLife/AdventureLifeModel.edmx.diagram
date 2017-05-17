@@ -5,15 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e5803d5103da4f5c8e9d931d39852a03" Name="Diagram1">
-        <EntityTypeShape EntityType="AdventureLifeContext.activity" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureLifeContext.employee" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureLifeContext.eventTime" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureLifeContext.reservation" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureLifeContext.database_firewall_rules" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureLifeContext.activity" Width="1.5" PointX="0.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureLifeContext.employee" Width="1.5" PointX="3.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureLifeContext.eventTime" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureLifeContext.reservation" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="AdventureLifeContext.FK__reservati__activ__5070F446" ManuallyRouted="false" />
         <AssociationConnector Association="AdventureLifeContext.FK__reservati__emplo__5165187F" ManuallyRouted="false" />
         <AssociationConnector Association="AdventureLifeContext.FK__reservati__event__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="AdventureLifeContext.qualification" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureLifeContext.qualification" ManuallyRouted="false" ></AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

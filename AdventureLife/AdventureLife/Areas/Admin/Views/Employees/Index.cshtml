@@ -26,6 +26,9 @@
         <th>
             @Html.DisplayNameFor(model => model.initial)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.activities)
+        </th>
         <th></th>
     </tr>
 
@@ -45,6 +48,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.initial)
+        </td>
+        <td>
+            @foreach(activity activity in item.activities)
+            {
+                <span>@activity.name</span>
+            }
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AdventureLifeContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AdventureLifeContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="activity">
           <Key>
             <PropertyRef Name="id" />
@@ -61,24 +61,6 @@ warning 6013: The table/view 'AdventureLife.dbo.unassignedBookings' does not hav
           <Property Name="Starting at" Type="varchar" MaxLength="5" />
           <Property Name="People amount" Type="tinyint" />
         </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'AdventureLife.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="database_firewall_rules">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="name" />
-            <PropertyRef Name="start_ip_address" />
-            <PropertyRef Name="end_ip_address" />
-            <PropertyRef Name="create_date" />
-            <PropertyRef Name="modify_date" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="create_date" Type="datetime" Nullable="false" />
-          <Property Name="modify_date" Type="datetime" Nullable="false" />
-        </EntityType>
         <Association Name="FK__qualifica__activ__5441852A">
           <End Role="activity" Type="Self.activity" Multiplicity="1" />
           <End Role="qualification" Type="Self.qualification" Multiplicity="*" />
@@ -149,16 +131,6 @@ warning 6002: The table/view 'AdventureLife.sys.database_firewall_rules' does no
           <EntitySet Name="eventTime" EntityType="Self.eventTime" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="qualification" EntityType="Self.qualification" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="reservation" EntityType="Self.reservation" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
-            <DefiningQuery>SELECT 
-    [database_firewall_rules].[id] AS [id], 
-    [database_firewall_rules].[name] AS [name], 
-    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
-    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
-    [database_firewall_rules].[create_date] AS [create_date], 
-    [database_firewall_rules].[modify_date] AS [modify_date]
-    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__qualifica__activ__5441852A" Association="Self.FK__qualifica__activ__5441852A">
             <End Role="activity" EntitySet="activity" />
             <End Role="qualification" EntitySet="qualification" />
@@ -180,8 +152,7 @@ warning 6002: The table/view 'AdventureLife.sys.database_firewall_rules' does no
             <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AdventureLifeContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -233,22 +204,6 @@ warning 6002: The table/view 'AdventureLife.sys.database_firewall_rules' does no
           <NavigationProperty Name="employee" Relationship="Self.FK__reservati__emplo__5165187F" FromRole="reservation" ToRole="employee" />
           <NavigationProperty Name="eventTime" Relationship="Self.FK__reservati__event__4F7CD00D" FromRole="reservation" ToRole="eventTime" />
         </EntityType>
-        <EntityType Name="database_firewall_rules">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="name" />
-            <PropertyRef Name="start_ip_address" />
-            <PropertyRef Name="end_ip_address" />
-            <PropertyRef Name="create_date" />
-            <PropertyRef Name="modify_date" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
         <Association Name="FK__reservati__activ__5070F446">
           <End Role="activity" Type="Self.activity" Multiplicity="0..1" />
           <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
@@ -294,7 +249,6 @@ warning 6002: The table/view 'AdventureLife.sys.database_firewall_rules' does no
           <EntitySet Name="employees" EntityType="Self.employee" />
           <EntitySet Name="eventTimes" EntityType="Self.eventTime" />
           <EntitySet Name="reservations" EntityType="Self.reservation" />
-          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
           <AssociationSet Name="FK__reservati__activ__5070F446" Association="Self.FK__reservati__activ__5070F446">
             <End Role="activity" EntitySet="activities" />
             <End Role="reservation" EntitySet="reservations" />
@@ -368,18 +322,6 @@ warning 6002: The table/view 'AdventureLife.sys.database_firewall_rules' does no
                 <ScalarProperty Name="eventTimeID" ColumnName="eventTimeID" />
                 <ScalarProperty Name="activityID" ColumnName="activityID" />
                 <ScalarProperty Name="employeeID" ColumnName="employeeID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="database_firewall_rules">
-            <EntityTypeMapping TypeName="AdventureLifeContext.database_firewall_rules">
-              <MappingFragment StoreEntitySet="database_firewall_rules">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
-                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

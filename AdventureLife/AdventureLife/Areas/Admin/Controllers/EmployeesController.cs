@@ -38,6 +38,7 @@ namespace AdventureLife.Areas.Admin.Controllers
         // GET: Admin/Employees/Create
         public ActionResult Create()
         {
+            ViewBag.activities = new SelectList(db.activities, "id", "name");
             return View();
         }
 
@@ -46,7 +47,7 @@ namespace AdventureLife.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,firstName,lastName,phone,email,initial")] employee employee)
+        public ActionResult Create([Bind(Include = "id,firstName,lastName,phone,email,initial,activities")] employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -54,6 +55,8 @@ namespace AdventureLife.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            ViewBag.activities = new SelectList(db.activities, "id", "name");
 
             return View(employee);
         }
