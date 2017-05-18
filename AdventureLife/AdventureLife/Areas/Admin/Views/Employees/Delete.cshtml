@@ -10,7 +10,7 @@
 <div>
     <h4>employee</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl>
         <dt>
             @Html.DisplayNameFor(model => model.firstName)
         </dt>
@@ -56,8 +56,8 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+        <div>
+            <input type="submit" value="Delete" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

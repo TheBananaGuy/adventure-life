@@ -140,17 +140,9 @@
       <DependentUpon>AdventureLifeModel.edmx</DependentUpon>
       <LastGenOutput>AdventureLifeModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Gulp\gulpfile.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
     <EntityDeploy Include="AdventureLifeModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -185,10 +177,6 @@
     <Content Include="Gulp\sass\shame\_shame.scss" />
     <Content Include="Gulp\sass\util\_mixins.scss" />
     <Content Include="Gulp\sass\util\_normalize.scss" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -201,7 +189,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Styles\main.css" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
