@@ -171,16 +171,8 @@
     <Content Include="Areas\Admin\Views\Employees\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Employees\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Employees\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Activities\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Activities\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Activities\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Activities\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Activities\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Timeslots\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Timeslots\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Timeslots\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Timeslots\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Timeslots\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Gulp\package.json" />
@@ -244,7 +236,6 @@
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\EmployeesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReservationsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\TimeslotsController.cs" />
     <Compile Include="Controllers\ActivityController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\ContactController.cs" />

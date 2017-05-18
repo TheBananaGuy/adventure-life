@@ -40,7 +40,7 @@ namespace AdventureLife.Areas.Admin.Controllers
         public ActionResult Create()
         {
             ViewBag.activityID = new SelectList(db.activities, "id", "name");
-            ViewBag.employeeID = new SelectList(db.employees, "id", "firstName");
+            ViewBag.employeeID = new SelectList(db.employees, "id", "initial");
             ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime");
             return View();
         }
@@ -60,7 +60,7 @@ namespace AdventureLife.Areas.Admin.Controllers
             }
 
             ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
-            ViewBag.employeeID = new SelectList(db.employees, "id", "firstName", reservation.employeeID);
+            ViewBag.employeeID = new SelectList(db.employees, "id", "initial", reservation.employeeID);
             ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime", reservation.eventTimeID);
             return View(reservation);
         }
@@ -78,7 +78,7 @@ namespace AdventureLife.Areas.Admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
-            ViewBag.employeeID = new SelectList(db.employees, "id", "firstName", reservation.employeeID);
+            ViewBag.employeeID = new SelectList(db.employees, "id", "initial", reservation.employeeID);
             ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime", reservation.eventTimeID);
             return View(reservation);
         }
@@ -97,7 +97,7 @@ namespace AdventureLife.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
-            ViewBag.employeeID = new SelectList(db.employees, "id", "firstName", reservation.employeeID);
+            ViewBag.employeeID = new SelectList(db.employees, "id", "initial", reservation.employeeID);
             ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime", reservation.eventTimeID);
             return View(reservation);
         }
