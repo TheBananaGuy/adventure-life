@@ -1,0 +1,48 @@
+/*column at activities*/
+
+.col-2-3 {
+	width: 66.66%;
+	h1,
+	p {
+		max-width: 40rem;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+}
+
+.col-1-3 {
+	width: 33.33%;
+	h1,
+	p,
+	hr {
+		max-width: 25rem;
+	}
+}
+
+.col-2-3,
+.col-1-3 {
+	padding: 40px 40px 80px 40px;
+	box-sizing: border-box;
+	float: left;
+	h1 {
+		color: white;
+		margin-bottom: 40px;
+	}
+	p {
+		color: white;
+		font-size: 16px;
+		margin-bottom: 20px;
+		@media screen and (max-width: 480px) {
+			font-size: 14px;
+		}
+	}
+	@media screen and (max-width: 700px) {
+		width: 100%;
+	}
+	@media screen and (max-width: 480px) {
+		padding: 20px, 40px;
+		width: 100%;
+		clear: left;
+	}
+}
+													// LEAVE ME HERE

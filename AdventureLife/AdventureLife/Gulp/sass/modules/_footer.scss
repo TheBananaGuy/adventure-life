@@ -1,0 +1,62 @@
+/*Footer styling*/
+.item-2 {
+	color: white;
+	width: 100%;
+	font-family: 'Open Sans';
+	margin-top: 20px;
+	display: inline-block;
+	text-align: center;
+	line-height: 200%;
+	ul {
+		list-style-type: none;
+		font-size: 13px;
+		padding: 10px 0px 20px;
+	}
+	p {
+		font-size: 16px;
+		font-weight: normal;
+		display: inline-block;
+		@media screen and (max-width: 700px) {
+			font-size: 15px;
+		}
+		@media screen and (max-width: 480px) {
+			font-size: 14px;
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.item-2 h3 {
+		font-size: 12px;
+	}
+	.fa-2x {
+		font-size: 1.3em !important;
+		margin-right: 10px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.item-2 h1 {
+		font-size: 12px;
+	}
+	li {
+		width: 100%;
+	}
+}
+
+i {
+  margin-right: 10px;
+}
+
+footer {
+	font-family: 'Open Sans';
+	text-align: center;
+	color: white;
+	font-size: 11px;
+	margin: 10px;
+	margin-bottom: 30px;
+	&__list,
+	&__list li {
+		padding: 11px;
+	}
+}

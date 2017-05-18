@@ -1,0 +1,61 @@
+/*homepage banner*/
+#banner-img {
+  position:absolute;
+  width: 100%;
+  height: auto;
+  left:0px;
+  top:112px;
+}
+
+.banner {
+	background-image: url('../images/banner.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding-bottom: 37%;
+	position: relative;
+	.inner-text {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 30px;
+		h1 {
+			@media screen and (max-width: 700px) {
+				font-size: 26px;
+			}
+			@media screen and (max-width: 480px) {
+				font-size: 18px;
+			}
+		}
+		p {
+			@media screen and (max-width: 700px) {
+				font-size: 16px;
+			}
+			@media screen and (max-width: 480px) {
+				font-size: 14px;
+			}
+		}
+	}
+	h1 {
+		font-family: 'Open Sans';
+		font-size: 34px;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+		position: relative;
+		text-transform: uppercase;
+		margin-top: calc( 17% - (120px / 2));
+		text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+	}
+	p {
+		font-family: 'Open Sans';
+		font-size: 24px;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+		position: relative;
+		margin-top: 20px;
+		text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+	}
+}

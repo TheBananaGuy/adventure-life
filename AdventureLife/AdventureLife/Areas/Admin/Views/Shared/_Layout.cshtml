@@ -1,37 +1,68 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html class="no-js" lang="en-us">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Styles/main-mod.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="">
-        <div class="">
-            <div class="">
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "" })
-            </div>
-            <div class="">
-                <ul class="">
-                    @Html.ActionLink("Dashboard", "Index", "Dashboard", new { area = "Admin" }, new { @class = "" })
-                    @Html.ActionLink("Reservations", "Index", "Reservations", new { area = "Admin" }, new { @class = "" })
-                    @Html.ActionLink("Employees", "Index", "Employees", new { area = "Admin" }, new { @class = "" })
-                    @Html.ActionLink("Activities", "Index", "Activities", new { area = "Admin" }, new { @class = "" })
-                </ul>
-            </div>
+    <div class="header">
+        <img id="logo" src="~/images/logo.png" alt="Adventure Life logo" />
+        <div id="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+        <nav id="main-nav">
+            <ul>
+                <li>@Html.ActionLink("Dashboard", "Index", "Dashboard", new { area = "Admin" }, new { @class = "" })</li>
+                <li>@Html.ActionLink("Reservations", "Index", "Reservations", new { area = "Admin" }, new { @class = "" })</li>
+                <li>@Html.ActionLink("Employees", "Index", "Employees", new { area = "Admin" }, new { @class = "" })</li>
+                <li>@Html.ActionLink("Activities", "Index", "Activities", new { area = "Admin" }, new { @class = "" })</li>
+            </ul>
+        </nav>
     </div>
 
-    <div class="">
+    <div class="container--general">
+
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
     </div>
 
+    <footer>
+        <div class="item-2">
+            <h2>Contact us!</h2>
+            <ul class="footer__list">
+                <li>
+                    <span style="white-space: nowrap;">
+                        <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                    </span>
+                    <p>+(45) 123 456 789</p>
+                </li>
+                <li>
+                    <span style="white-space: nowrap;">
+                        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                    </span>
+                    <p>info@adventurelife.com</p>
+                </li>
+                <li>
+                    <span style="white-space: nowrap;">
+                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                    </span>
+                    <p>Check out our facebook!</p>
+                </li>
+            </ul>
+        </div>
+        <p>	&copy; @DateTime.Now.Year . All rights reserved. Adventure. Life.</p>
+    </footer>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+
 </body>
 </html>

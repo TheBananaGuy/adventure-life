@@ -1,0 +1,49 @@
+/*pricelist table design*/
+table {
+	margin-top: 10px;
+}
+
+table, th, td {
+    font-family: 'Open Sans';
+    border-collapse: collapse;
+    color: white;
+}
+
+td:nth-child(2) {
+	padding-left: 30px;
+	font-family: 'Open Sans';
+	font-weight: bold;
+	color: red;
+	text-align: right;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2196F3;
+    color: white;
+}
+
+/*Book button at pricelist*/
+.button {
+	background-color: #A1BF75;
+	border: none;
+	color: white;
+	padding: 15px 20px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'Open Sans';
+	font-weight: bold;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+	&:hover {
+	    background-color: #357a38;
+    	color: white;
+	}
+}

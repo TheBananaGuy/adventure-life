@@ -1,0 +1,66 @@
+/*img grid layout at homepage*/
+.grid {
+  	overflow: hidden;
+  	@media screen and (max-width: 480px) {
+		padding: 0;
+	}
+}
+
+.item {
+	color: white;
+	/*padding: 1rem;*/
+	width: 33.33%;
+	float: left;
+	text-align:center;
+	position: relative;
+	line-height: 0;
+	img {
+		transition: opacity 1s;
+		width: 100%;
+	}
+	&:nth-child(1) {
+		background-color: #6BB7DB;
+	}
+	&:nth-child(2) {
+		background-color: #A1BF75;	
+	}
+	&:nth-child(3) {
+		background-color: #043673;	
+	}
+	.inner {
+	    position: absolute;
+	    top: calc( 50% - 38px / 2);
+	    width: 100%;
+	    text-align: center;
+	    left: 0;
+	    line-height: 1;
+	}
+	a {
+		display: inline-block;
+	    color: #fff;
+	    border: 2px solid white;
+		text-decoration: none;
+	    padding: 10px 40px;
+	    text-transform: uppercase;
+	    transition: all 0.2s;
+	    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+	    &:hover {
+			transform: scale(1.1);
+	    }
+	}
+
+	&:hover img {
+		opacity: 0.2;
+	}
+	@media screen and (max-width: 480px) {
+		margin: 0;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.grid .item a {
+		padding: 10px 15px;
+		font-size: 14px;
+	}
+}

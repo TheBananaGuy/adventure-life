@@ -35,32 +35,6 @@ namespace AdventureLife.Areas.Admin.Controllers
             return View(employee);
         }
 
-        // GET: Admin/Employees/Create
-        public ActionResult Create()
-        {
-            ViewBag.activities = new SelectList(db.activities, "id", "name");
-            return View();
-        }
-
-        // POST: Admin/Employees/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,firstName,lastName,phone,email,initial,activities")] employee employee)
-        {
-            if (ModelState.IsValid)
-            {
-                db.employees.Add(employee);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.activities = new SelectList(db.activities, "id", "name");
-
-            return View(employee);
-        }
-
         // GET: Admin/Employees/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -90,32 +64,6 @@ namespace AdventureLife.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
             return View(employee);
-        }
-
-        // GET: Admin/Employees/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            employee employee = db.employees.Find(id);
-            if (employee == null)
-            {
-                return HttpNotFound();
-            }
-            return View(employee);
-        }
-
-        // POST: Admin/Employees/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            employee employee = db.employees.Find(id);
-            db.employees.Remove(employee);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

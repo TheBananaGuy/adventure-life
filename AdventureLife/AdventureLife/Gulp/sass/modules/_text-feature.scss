@@ -1,0 +1,32 @@
+/*Text feature*/
+
+.feature {
+	padding: 20px 100px;
+	@media screen and (max-width: 800px) {
+		padding: 20px 20px;
+	}
+	h1 {
+		font-family:'Open Sans';
+		font-size: 34px;
+		font-weight: 600;
+		font-style: normal;
+		text-transform: uppercase;
+		color: white;
+		text-align: center;
+		margin: 20px;
+	}
+	p {
+		font-family:'Open Sans';
+		font-size: 13px;
+		color: white;
+		margin-bottom: 16px;
+	}
+}
+
+#invoice {
+	text-align: center;
+	font-family:'Open Sans';
+	font-size: 13px;
+	color: white;
+	margin-bottom: 16px;
+}

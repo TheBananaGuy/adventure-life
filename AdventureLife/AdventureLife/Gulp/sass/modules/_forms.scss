@@ -1,0 +1,107 @@
+/*Form styling*/
+fieldset {
+	border: none;
+	width: 400px;
+	max-width: 90%;
+	margin: 0 auto;
+    h1 {
+        color: white;
+        font-family: 'Open Sans';
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        border-bottom: 2px solid white;
+    }
+}
+
+label {
+	display: block;
+    max-width: 100%;
+    font-weight: bold;
+    font-family: 'Open Sans';
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
+input {
+	display: block;
+	width: 100%;
+}
+
+hr {
+	border-top: 1px solid white;
+    margin: 20px 0px;
+}
+
+.form-group label span,
+.validation span {
+	color: #F00;
+}
+
+input[type=text],
+input[type=tel],
+input[type=phone],
+input[type=email],
+input[type=date],
+input[type=number],
+select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    height: 50px;
+    display: inline-block;
+    background: transparent;
+    border: 3px solid white;
+    box-sizing: border-box;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    &:focus {
+    	border: 3px solid #A1BF75;
+    }
+}
+
+input[type=submit] {
+    background-color: #A1BF75;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    margin: 25px 0 15px 0;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    &:hover {
+        background-color: #357a38;
+        color: white;
+    }
+}
+
+textarea {
+    padding: 12px 20px;
+    margin: 8px 0;
+    height: 150px;
+    width: 100%;
+    display: inline-block;
+    background: transparent;
+    border: 3px solid white;
+    box-sizing: border-box;
+    outline: none;
+    color: white;
+    font-family: 'Open Sans';
+    &:focus {
+		border: 3px solid #A1BF75;
+	}
+}
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }

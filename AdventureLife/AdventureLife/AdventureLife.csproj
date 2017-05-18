@@ -158,8 +158,6 @@
     <Content Include="Areas\Admin\Views\Reservations\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Reservations\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Reservations\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Employees\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Employees\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Employees\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Employees\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Employees\Index.cshtml" />
@@ -189,6 +187,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Styles\main-mod.css" />
     <Content Include="Styles\main.css" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />

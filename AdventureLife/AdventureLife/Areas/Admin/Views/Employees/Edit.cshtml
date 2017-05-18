@@ -18,19 +18,11 @@
         @Html.HiddenFor(model => model.id)
 
         <div>
-            @Html.LabelFor(model => model.firstName, htmlAttributes: new { @class = "" })
-            <div>
-                @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "" } })
-                @Html.ValidationMessageFor(model => model.firstName, "", new { @class = "" })
-            </div>
+            <p>Name: @Html.DisplayFor(model => model.firstName) @Html.DisplayFor(model => model.lastName)</p>
         </div>
 
         <div>
-            @Html.LabelFor(model => model.lastName, htmlAttributes: new { @class = "" })
-            <div>
-                @Html.EditorFor(model => model.lastName, new { htmlAttributes = new { @class = "" } })
-                @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "" })
-            </div>
+            <p>Initials: @Html.DisplayFor(model => model.initial)</p>
         </div>
 
         <div>
@@ -46,14 +38,6 @@
             <div>
                 @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "" } })
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "" })
-            </div>
-        </div>
-
-        <div>
-            @Html.LabelFor(model => model.initial, htmlAttributes: new { @class = "" })
-            <div>
-                @Html.EditorFor(model => model.initial, new { htmlAttributes = new { @class = "" } })
-                @Html.ValidationMessageFor(model => model.initial, "", new { @class = "" })
             </div>
         </div>
 

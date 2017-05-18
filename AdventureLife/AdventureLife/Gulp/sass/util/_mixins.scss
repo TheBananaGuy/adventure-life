@@ -34,6 +34,13 @@
 	transition:			$transition;
 }
 
+@mixin rotate($rotate) {
+	-webkit-transform:	rotate($rotate);
+	-moz-transform:		rotate($rotate);
+	-o-transform:		rotate($rotate);
+	transform:			rotate($rotate);
+}
+
 @mixin column-count($column-count) {
 	-webkit-column-count:	$column-count;
 	-moz-column-count:		$column-count;
