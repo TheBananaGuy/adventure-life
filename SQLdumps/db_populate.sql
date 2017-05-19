@@ -5,7 +5,7 @@ go
 -- let's create some activities that people can make reservations for
 insert into activity values ('Rock climbing', 100.00)
 insert into activity values ('Paintball', 250.00)
-insert into activity values ('Bow tag', 150.00)
+insert into activity values ('Archery', 150.00)
 
 -- a schedule for our activities
 insert into eventTime values ('08:00')
