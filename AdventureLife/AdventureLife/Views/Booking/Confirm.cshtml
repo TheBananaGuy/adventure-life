@@ -55,7 +55,7 @@
             Total price:
         </dt>
         <dd>
-            @( Html.DisplayFor(model => model.activity.price)*Html.DisplayFor(model => model.people)  )
+            @( @ViewBag.People * @ViewBag.Price  ) DKK
         </dd>
     </dl>
 </div>

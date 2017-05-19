@@ -55,6 +55,8 @@ namespace AdventureLife.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.price = booked.activity.price;
+            ViewBag.people = booked.people;
             return View(booked);
         }
 
