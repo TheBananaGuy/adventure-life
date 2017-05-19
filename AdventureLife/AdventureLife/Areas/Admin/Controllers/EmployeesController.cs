@@ -61,9 +61,23 @@ namespace AdventureLife.Areas.Admin.Controllers
             {
                 db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Result", employee);
             }
             return View(employee);
+        }
+
+        public ActionResult Result(employee employee)
+        {
+            if (employee == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            employee result = db.employees.Find(employee.id);
+            if (result == null)
+            {
+                return HttpNotFound();
+            }
+            return View(result);
         }
 
         protected override void Dispose(bool disposing)

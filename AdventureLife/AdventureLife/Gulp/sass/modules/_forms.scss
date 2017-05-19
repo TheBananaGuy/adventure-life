@@ -44,7 +44,8 @@ input[type=phone],
 input[type=email],
 input[type=date],
 input[type=number],
-select {
+select,
+.datepicker {
     padding: 12px 20px;
     margin: 8px 0;
     height: 50px;
@@ -105,3 +106,22 @@ textarea {
 
 textarea:focus::-webkit-input-placeholder { color:transparent; }
 textarea:focus::-moz-placeholder { color:transparent; }
+
+dl {
+    text-align: center;
+    display: block;
+    color: white;
+    dt, dd {
+        width: 40%;
+        min-width: 100px;
+        padding: 10px;
+        margin: auto;
+        display: inline-block;
+    }
+    dt {
+        text-align: right;
+    }
+    dd {
+        text-align: left;
+    }
+}

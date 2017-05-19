@@ -1,15 +1,61 @@
 ﻿@{
-    ViewBag.Title = "Confirm";
+    ViewBag.Title = "Your invoice";
 }
 
-
-<ul class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Booking</a></li>
-    <li>Invoice</li>
-</ul>
+@Html.Partial("_BreadcrumbPlus")
+@model AdventureLife.reservation
 
 <div class="feature">
     <h1>Thank you!</h1>
-    <p id="invoice"> Here is your invoice:</p>
+    <p id="invoice">We will await your payment at the facility. Here is your invoice:</p>
+    <dl>
+        <dt>
+            Name:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt>
+            Phone:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+        <dt>
+            Email:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            Day and time:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eventDate) @Html.DisplayFor(model => model.eventTime.startTime)
+        </dd>
+        <dt>
+            Activity:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.activity.name)
+        </dd>
+        <dt>
+            Price per person:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.activity.price) DKK
+        </dd>
+        <dt>
+            Amount of participants:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.people)
+        </dd>
+        <dt>
+            Total price:
+        </dt>
+        <dd>
+            @( Html.DisplayFor(model => model.activity.price)*Html.DisplayFor(model => model.people)  )
+        </dd>
+    </dl>
 </div>

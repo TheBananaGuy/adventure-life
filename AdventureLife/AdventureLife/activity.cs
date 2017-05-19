@@ -29,7 +29,8 @@ namespace AdventureLife
         public string name { get; set; }
         [Display(Name = "Price per person")]
         [Required(ErrorMessage = "Please enter a price")]
-        [RegularExpression("^[0-9]([.,][0-9]{8,2})?$", ErrorMessage = "Please enter a valid price")]
+        // [RegularExpression("^[0-9]([.,][0-9]{8,2})?$", ErrorMessage = "Please enter a valid price")]
+        // didn't really work out
         public Nullable<decimal> price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -22,7 +22,6 @@ namespace AdventureLife
         [Display(Name = "Name")]
         [Required(ErrorMessage = "Please enter a name")]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "Please enter a valid name")]
-        [StringLength(100, ErrorMessage = "Please enter a shorter version of the name")]
         public string name { get; set; }
         [Display(Name = "Phone")]
         [Required(ErrorMessage = "Please enter a phone number")]
@@ -34,7 +33,6 @@ namespace AdventureLife
         public string email { get; set; }
         [Display(Name = "Group size")]
         [Required(ErrorMessage = "Please state the amount of participants")]
-        [Range(1, 255, ErrorMessage = "Sorry, we cannot host that amount of people now")]
         public Nullable<byte> people { get; set; }
         [Display(Name = "Day")]
         [Required(ErrorMessage = "Please select a date")]
@@ -43,15 +41,11 @@ namespace AdventureLife
         public Nullable<System.DateTime> eventDate { get; set; }
         [Display(Name = "Time")]
         [Required(ErrorMessage = "Please select a time slot")]
-        [StringLength(5, ErrorMessage = "Please select a time slot from our list")]
         public Nullable<int> eventTimeID { get; set; }
         [Display(Name = "Activity")]
         [Required(ErrorMessage = "Please select an activity")]
-        [StringLength(50, ErrorMessage = "Please select an activity from our list")]
         public Nullable<int> activityID { get; set; }
         [Display(Name = "Instructor")]
-        [Required(ErrorMessage = "Please select an instructor")]
-        [StringLength(10, ErrorMessage = "Please select an instructor from our list")]
         public Nullable<int> employeeID { get; set; }
     
         public virtual activity activity { get; set; }

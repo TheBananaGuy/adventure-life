@@ -10,5 +10,5 @@
     <br />
     <p>Qualified instructors: @ViewBag.Details.employees.Count</p>
     <hr>
-    <button class="button">Book now!</button>
+    @Html.ActionLink("Book now!", "Index", "Booking", new { area = "" }, new { @class = "button" })
 </div>

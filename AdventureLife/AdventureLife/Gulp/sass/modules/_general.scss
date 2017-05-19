@@ -17,3 +17,13 @@ body {
 #logo {
   width:179px;
 }
+
+
+a {
+    color: darkgrey;
+    text-decoration: none;
+    &:hover {
+        color: #01447e;
+        text-decoration: underline;
+    }
+}

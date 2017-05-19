@@ -6,13 +6,13 @@
     <title>@ViewBag.Title</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="~/Styles/main-mod.css">
+    <link rel="stylesheet" href="~/Styles/main.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="header">
-        <img id="logo" src="~/images/logo.png" alt="Adventure Life logo" />
+        <a href="~/"><img id="logo" src="~/images/logo.png" alt="Adventure Life logo" /></a>
         <div id="nav-icon">
             <span></span>
             <span></span>
@@ -21,13 +21,13 @@
         </div>
         <nav id="main-nav">
             <ul>
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Booking", "Index", "Booking")</li>
-                <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
-                <li>@Html.ActionLink("Safety", "Index", "Safety")</li>
-                <li>@Html.ActionLink("Rock Climbing", "Rockclimbing", "Activity", new { area = "" }, new { @class = "activity" })</li>
-                <li>@Html.ActionLink("Bow Tag", "Bowtag", "Activity", new { area = "" }, new { @class = "activity" })</li>
-                <li>@Html.ActionLink("Paintball", "Paintball", "Activity", new { area = "" }, new { @class = "activity" })</li>
+                <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "" })</li>
+                <li>@Html.ActionLink("Booking", "Index", "Booking", new { area = "" }, new { @class = "" })</li>
+                <li>@Html.ActionLink("Contact", "Index", "Contact", new { area = "" }, new { @class = "" })</li>
+                <li>@Html.ActionLink("Safety", "Index", "Safety", new { area = "" }, new { @class = "" })</li>
+                <li>@Html.ActionLink("Rock Climbing", "Rockclimbing", "Activity", new { area = "" }, new { @class = "" })</li>
+                <li>@Html.ActionLink("Archery", "Archery", "Activity", new { area = "" }, new { @class = "" })</li>
+                <li>@Html.ActionLink("Paintball", "Paintball", "Activity", new { area = "" }, new { @class = "" })</li>
             </ul>
         </nav>
     </div>
@@ -46,25 +46,26 @@
                     <span style="white-space: nowrap;">
                         <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
                     </span>
-                    <p>+(45) 123 456 789</p>
+                    <p><a href="tel:0045123456789" target="_blank">+(45) 123 456 789</a></p>
                 </li>
                 <li>
                     <span style="white-space: nowrap;">
                         <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
                     </span>
-                    <p>info@adventurelife.com</p>
+                    <p><a href="mailto:info@adventurelife.com" target="_blank">info@adventurelife.com</a></p>
                 </li>
                 <li>
                     <span style="white-space: nowrap;">
                         <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
                     </span>
-                    <p>Check out our facebook!</p>
+                    <p><a href="fb.com" target="_blank">Check out our facebook!</a></p>
                 </li>
             </ul>
         </div>
         <p>	&copy; @DateTime.Now.Year . All rights reserved. Adventure. Life.</p>
     </footer>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     <script src="~/Scripts/main.js"></script>
 
 </body>

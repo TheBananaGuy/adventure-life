@@ -9,7 +9,6 @@
 @foreach (var item in Model)
 {
     <div>
-        <hr />
         <dl class="">
             <dt>
                 @Html.DisplayNameFor(model => model.name)
@@ -28,6 +27,7 @@
             </dd>
 
         </dl>
+        <hr />
     </div>
     <p>
         @Html.ActionLink("Change price", "Edit", new { id = item.id })

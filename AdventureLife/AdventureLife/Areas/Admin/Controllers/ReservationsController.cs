@@ -56,7 +56,7 @@ namespace AdventureLife.Areas.Admin.Controllers
             {
                 db.reservations.Add(reservation);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Result", reservation);
             }
 
             ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
@@ -94,12 +94,26 @@ namespace AdventureLife.Areas.Admin.Controllers
             {
                 db.Entry(reservation).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Result", reservation);
             }
             ViewBag.activityID = new SelectList(db.activities, "id", "name", reservation.activityID);
             ViewBag.employeeID = new SelectList(db.employees, "id", "initial", reservation.employeeID);
             ViewBag.eventTimeID = new SelectList(db.eventTimes, "id", "startTime", reservation.eventTimeID);
             return View(reservation);
+        }
+
+        public ActionResult Result(reservation reservation)
+        {
+            if (reservation == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            reservation result = db.reservations.Find(reservation.id);
+            if (result == null)
+            {
+                return HttpNotFound();
+            }
+            return View(result);
         }
 
         // GET: Admin/Reservations/Delete/5

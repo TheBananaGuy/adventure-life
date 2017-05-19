@@ -1,0 +1,19 @@
+﻿
+<ul class="breadcrumb">
+    <li>
+        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "" })
+    </li>
+    @if (ViewBag.Bread == "Booking")
+    {
+        <li>
+            @Html.ActionLink("Booking", "Index", "Booking", new { area = "" }, new { @class = "" })
+        </li>
+    }
+    else if (ViewBag.Bread == "Contact")
+    {
+        <li>
+            @Html.ActionLink("Booking", "Index", "Booking", new { area = "" }, new { @class = "" })
+        </li>
+    }
+    <li>@ViewBag.Title</li>
+</ul>

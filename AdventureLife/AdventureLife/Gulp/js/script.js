@@ -12,4 +12,20 @@ $(document).ready(function(){
 			scrollTop: ($(".breadcrumb").offset().top - $('.header').outerHeight())
 		}, 1500);
 	});
+
+	// cookie to admin area
+	// does not work btw...
+	// $(".container--admin").ready(function){
+	// 	if($.cookie("pass")!="admin"){
+	// 		var whois = prompt("Who are you?");
+	// 		if (whois != "admin"){
+	// 			window.location.replace("about:blank");
+	// 		} else {
+	// 			$.cookie("pass", "admin");
+	// 		}
+	// 	}
+	// }
+	if (datefield.type!="date"){
+        $('.js-datepicker').datepicker();
+    };
 });

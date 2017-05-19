@@ -10,11 +10,11 @@ namespace AdventureLife.Controllers
     {
         private AdventureLifeEntities db = new AdventureLifeEntities();
 
-        // GET: Activity = Bow tag
-        public ActionResult Bowtag()
+        // GET: Activity = Archery
+        public ActionResult Archery()
         {
             ViewBag.Suffix = "arch";
-            ViewBag.Details = db.activities.First(a => a.name == "Bow tag");
+            ViewBag.Details = db.activities.First(a => a.name == "Archery");
             return View();
         }
 

@@ -10,32 +10,34 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div>
-        <h4>activity</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "" })
-        @Html.HiddenFor(model => model.id)
-
+    <fieldset>
         <div>
-            <h4>@Html.DisplayFor(model => model.name)</h4>
-            <label>Old price: <span>@Html.DisplayFor(model => model.price)</span> DKK</label>
-        </div>
+            <h4>activity</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "" })
+            @Html.HiddenFor(model => model.id)
 
-        <div>
             <div>
-                <label>New price (DKK):</label>
-                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "" } })
-                @Html.ValidationMessageFor(model => model.price, "", new { @class = "" })
+                <h4>@Html.DisplayFor(model => model.name)</h4>
+                <label>Old price: <span>@Html.DisplayFor(model => model.price)</span> DKK</label>
+            </div>
+
+            <div>
+                <div>
+                    <label>New price (DKK):</label>
+                    @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "" } })
+                    @Html.ValidationMessageFor(model => model.price, "", new { @class = "" })
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <input type="submit" value="Save" />
+                </div>
             </div>
         </div>
+    </fieldset>
 
-        <div>
-            <div>
-                <input type="submit" value="Save" />
-            </div>
-        </div>
-    </div>
 }
 
 <div>

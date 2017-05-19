@@ -1,34 +1,25 @@
-/*
-
 // RESET
 @import 'util/normalize';
-// VARIABLES
-@import 'base/colors';
-@import 'base/settings';
-@import 'base/vars';
-@import 'base/typography';
+
 // MIXINS
 @import 'util/mixins';
-// OTHER UTILITIES
-@import 'base/helpers';
-// GENERAL STYLING
 
 // MODULES
-// @import 'modules/general';
-// @import 'modules/burger-nav';
-// @import 'modules/breadcrumbs';
-// @import 'modules/frontpage-banner';
-// @import 'modules/frontpage-grid';
-// @import 'modules/text-feature';
-// @import 'modules/gmap';
-// @import 'modules/form-container';
-// @import 'modules/forms';
-// @import 'modules/activity-banners';
-// @import 'modules/activity-content';
-// @import 'modules/activity-sidebar';
-// @import 'modules/footer';
+@import 'modules/general';
+@import 'modules/burger-nav';
+@import 'modules/breadcrumbs';
+@import 'modules/frontpage-banner';
+@import 'modules/frontpage-grid';
+@import 'modules/text-feature';
+@import 'modules/gmap';
+@import 'modules/form-container';
+@import 'modules/forms';
+@import 'modules/activity-banners';
+@import 'modules/activity-content';
+@import 'modules/activity-sidebar';
+@import 'modules/footer';
+@import 'modules/admin';
+@import 'modules/datepicker';
 
 // HACKS
 @import 'shame/shame';
-
-*/

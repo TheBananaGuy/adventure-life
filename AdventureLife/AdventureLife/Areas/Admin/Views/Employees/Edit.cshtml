@@ -10,43 +10,45 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div>
-        <h4>employee</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "" })
-        @Html.HiddenFor(model => model.id)
-
+    <fieldset>
         <div>
-            <p>Name: @Html.DisplayFor(model => model.firstName) @Html.DisplayFor(model => model.lastName)</p>
-        </div>
+            <h4>employee</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "" })
+            @Html.HiddenFor(model => model.id)
 
-        <div>
-            <p>Initials: @Html.DisplayFor(model => model.initial)</p>
-        </div>
-
-        <div>
-            @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "" })
             <div>
-                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "" } })
-                @Html.ValidationMessageFor(model => model.phone, "", new { @class = "" })
+                <p>Name: @Html.DisplayFor(model => model.firstName) @Html.DisplayFor(model => model.lastName)</p>
+            </div>
+
+            <div>
+                <p>Initials: @Html.DisplayFor(model => model.initial)</p>
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "" })
+                <div>
+                    @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "" } })
+                    @Html.ValidationMessageFor(model => model.phone, "", new { @class = "" })
+                </div>
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "" })
+                <div>
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "" } })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "" })
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <input type="submit" value="Save" />
+                </div>
             </div>
         </div>
+    </fieldset>
 
-        <div>
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "" })
-            <div>
-                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "" } })
-                @Html.ValidationMessageFor(model => model.email, "", new { @class = "" })
-            </div>
-        </div>
-
-        <div>
-            <div>
-                <input type="submit" value="Save" />
-            </div>
-        </div>
-    </div>
 }
 
 <div>

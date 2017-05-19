@@ -1,13 +1,11 @@
 ﻿@model AdventureLife.reservation
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Booking";
 }
-<!--breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li>Booking</li>
-</ul>
+
+@Html.Partial("_Breadcrumb")
+
 <!--booking form-->
 @using (Html.BeginForm())
 {
@@ -36,7 +34,7 @@
 
         <div class="form-group">
             <label>Day <span>*</span></label>
-            @Html.EditorFor(model => model.eventDate, new { htmlAttributes = new { @class = "" } })
+            @Html.EditorFor(model => model.eventDate, new { htmlAttributes = new { @class = "datepicker js-datepicker" } })
             @Html.ValidationMessageFor(model => model.eventDate, "", new { @class = "validation" })
         </div>
 
