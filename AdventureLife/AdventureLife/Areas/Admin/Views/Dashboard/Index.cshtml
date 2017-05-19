@@ -1,7 +1,17 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Dashboard";
 }
 
-<h2>Index</h2>
+<h2>Welcome to the administration dashboard</h2>
 
+<p>Here you can do the following things:</p>
+
+<ul>
+    <li>@Html.ActionLink("View reservations", "Index", "Reservations", new { area = "Admin" }, new { @class = "" })</li>
+    <li>@Html.ActionLink("Create new reservations", "Create", "Reservations", new { area = "Admin" }, new { @class = "" })</li>
+    <li>@Html.ActionLink("Look up employees", "Index", "Employees", new { area = "Admin" }, new { @class = "" })</li>
+    <li>@Html.ActionLink("Loook up activities", "Index", "Activities", new { area = "Admin" }, new { @class = "" })</li>
+</ul>
+
+<p>More functionality coming soon. We promise.</p>
