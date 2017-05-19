@@ -3,21 +3,8 @@
     ViewBag.Title = "Paintball";
 }
 
-<div class="activity-banner activity-banner--paint">
-    <div class="inner">
-        <h1>Paintball</h1>
-        <div class="stick-to-bottom">
-            <i class="fa fa-angle-double-down fa-3x" aria-hidden="true"></i>
-        </div>
-    </div>
-</div>
-<!--breadcrumb-->
-<ul class="breadcrumb">
-    <li>
-        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "" })
-    </li>
-    <li>Paintball</li>
-</ul>
+@Html.Partial("_ActivityHead")
+
 <!--Column content-->
 <div class="column">
     <div class="col-2-3">

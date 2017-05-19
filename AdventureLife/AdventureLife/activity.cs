@@ -11,6 +11,7 @@ namespace AdventureLife
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
     public partial class activity
@@ -24,7 +25,11 @@ namespace AdventureLife
 
         [HiddenInput(DisplayValue = false)]
         public int id { get; set; }
+        [Display(Name = "Activity name")]
         public string name { get; set; }
+        [Display(Name = "Price per person")]
+        [Required(ErrorMessage = "Please enter a price")]
+        [RegularExpression("^[0-9]([.,][0-9]{8,2})?$", ErrorMessage = "Please enter a valid price")]
         public Nullable<decimal> price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

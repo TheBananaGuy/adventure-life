@@ -1,15 +1,8 @@
 // RESET
 @import 'util/normalize';
-// VARIABLES
-// @import 'base/colors';
-// @import 'base/settings';
-// @import 'base/vars';
-// @import 'base/typography';
+
 // MIXINS
 @import 'util/mixins';
-// OTHER UTILITIES
-// @import 'base/helpers';
-// GENERAL STYLING
 
 // MODULES
 @import 'modules/general';
@@ -27,4 +20,4 @@
 @import 'modules/footer';
 
 // HACKS
-// @import 'shame/shame';
+@import 'shame/shame';

@@ -25,12 +25,19 @@ namespace AdventureLife
         
         [HiddenInput(DisplayValue = false)]
         public int id { get; set; }
+        [Display(Name = "First name")]
         public string firstName { get; set; }
+        [Display(Name = "Last name")]
         public string lastName { get; set; }
-        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone")]
+        [Required(ErrorMessage = "Please enter a phone number")]
+        [DataType(DataType.PhoneNumber, ErrorMessage = "Please enter a valid phone number")]
         public Nullable<int> phone { get; set; }
-        [DataType(DataType.EmailAddress)]
+        [Display(Name = "E-mail")]
+        [Required(ErrorMessage = "Please enter an e-mail")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Please enter a valid email")]
         public string email { get; set; }
+        [Display(Name = "Initials")]
         public string initial { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

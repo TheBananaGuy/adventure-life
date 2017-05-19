@@ -1,0 +1,17 @@
+﻿
+<!--banner image-->
+<div class="activity-banner activity-banner--@ViewBag.Suffix">
+    <div class="inner">
+        <h1>@ViewBag.Title</h1>
+        <div class="stick-to-bottom">
+            <i class="fa fa-angle-double-down fa-3x" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+<!--breadcrumb-->
+<ul class="breadcrumb">
+    <li>
+        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "" })
+    </li>
+    <li>@ViewBag.Title</li>
+</ul>

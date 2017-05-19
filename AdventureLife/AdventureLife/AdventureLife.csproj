@@ -163,7 +163,6 @@
     <Content Include="Areas\Admin\Views\Employees\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Activities\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Activities\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Dashboard.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Gulp\package.json" />
     <Content Include="Gulp\sass\base\_colors.scss" />
@@ -257,6 +256,8 @@
     <Content Include="Views\Activity\Paintball.cshtml" />
     <Content Include="Views\Booking\Confirm.cshtml" />
     <Content Include="Views\Shared\_ActivityDetails.cshtml" />
+    <Content Include="Views\Contact\Confirm.cshtml" />
+    <Content Include="Views\Shared\_ActivityHead.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -13,6 +13,7 @@ namespace AdventureLife.Controllers
         // GET: Activity = Bow tag
         public ActionResult Bowtag()
         {
+            ViewBag.Suffix = "arch";
             ViewBag.Details = db.activities.First(a => a.name == "Bow tag");
             return View();
         }
@@ -20,6 +21,7 @@ namespace AdventureLife.Controllers
         // GET: Activity = Paintball
         public ActionResult Paintball()
         {
+            ViewBag.Suffix = "paint";
             ViewBag.Details = db.activities.First(a => a.name == "Paintball");
             return View();
         }
@@ -27,6 +29,7 @@ namespace AdventureLife.Controllers
         // GET: Activity = Rock climbing
         public ActionResult Rockclimbing()
         {
+            ViewBag.Suffix = "rock";
             ViewBag.Details = db.activities.First(a => a.name == "Rock climbing");
             return View();
         }
