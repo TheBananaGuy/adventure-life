@@ -5,6 +5,7 @@
 }
 
 <h2>Activites</h2>
+<hr />
 
 @foreach (var item in Model)
 {
@@ -27,10 +28,10 @@
             </dd>
 
         </dl>
-        <hr />
     </div>
     <p>
         @Html.ActionLink("Change price", "Edit", new { id = item.id })
     </p>
+    <hr />
 }
 

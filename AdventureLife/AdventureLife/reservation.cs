@@ -37,7 +37,7 @@ namespace AdventureLife
         [Display(Name = "Day")]
         [Required(ErrorMessage = "Please select a date")]
         [DataType(DataType.Date, ErrorMessage = "Please enter a valid date")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> eventDate { get; set; }
         [Display(Name = "Time")]
         [Required(ErrorMessage = "Please select a time slot")]
